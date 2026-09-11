@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos de Mayúsculas y Minúsculas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Juegos de Mayúsculas y Minúsculas</h1>
+            <p>¡Elige un juego y demuestra tu dominio del uso correcto de mayúsculas!</p>
+        </header>
+
+        <div class="menu-principal" id="menuPrincipal">
+            <div class="opciones-juego">
+                <button class="boton-juego nivel-1" onclick="iniciarJuego(1)">
+                    <span class="nivel">Nivel 1</span>
+                    <span class="titulo">Corrección Básica</span>
+                    <span class="descripcion">Corrige palabras al inicio de oración</span>
+                    <span class="dificultad">⭐ Principiante</span>
+                </button>
+
+                <button class="boton-juego nivel-2" onclick="iniciarJuego(2)">
+                    <span class="nivel">Nivel 2</span>
+                    <span class="titulo">Clasificación Avanzada</span>
+                    <span class="descripcion">Clasifica nombres propios y comunes</span>
+                    <span class="dificultad">⭐⭐ Intermedio</span>
+                </button>
+
+                <button class="boton-juego nivel-3" onclick="iniciarJuego(3)">
+                    <span class="nivel">Nivel 3</span>
+                    <span class="titulo">Experto en Mayúsculas</span>
+                    <span class="descripcion">Completa reglas de mayúsculas complejas</span>
+                    <span class="dificultad">⭐⭐⭐ Experto</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- JUEGO 1: CORRECCIÓN BÁSICA -->
+        <div class="juego" id="juego1" style="display:none;">
+            <div class="encabezado-juego">
+                <h2>Nivel 1: Corrección Básica</h2>
+                <div class="info-juego">
+                    <span class="puntuacion">Puntuación: <strong id="puntos1">0</strong></span>
+                    <span class="tiempo">Tiempo: <strong id="timer1">30</strong>s</span>
+                    <span class="progreso"><strong id="progreso1">1</strong>/10</span>
+                </div>
+            </div>
+
+            <div class="contenido-juego">
+                <div class="pregunta">
+                    <p id="pregunta1"></p>
+                </div>
+
+                <div class="opciones" id="opciones1"></div>
+
+                <div class="barra-progreso">
+                    <div class="barra-llena" id="barra1"></div>
+                </div>
+            </div>
+
+            <button class="boton-salir" onclick="volverAlMenu()">← Volver al Menú</button>
+        </div>
+
+        <!-- JUEGO 2: CLASIFICACIÓN AVANZADA -->
+        <div class="juego" id="juego2" style="display:none;">
+            <div class="encabezado-juego">
+                <h2>Nivel 2: Clasificación Avanzada</h2>
+                <div class="info-juego">
+                    <span class="puntuacion">Puntuación: <strong id="puntos2">0</strong></span>
+                    <span class="tiempo">Tiempo: <strong id="timer2">40</strong>s</span>
+                    <span class="progreso"><strong id="progreso2">1</strong>/10</span>
+                </div>
+            </div>
+
+            <div class="contenido-juego">
+                <div class="pregunta">
+                    <p id="pregunta2"></p>
+                </div>
+
+                <div class="opciones" id="opciones2"></div>
+
+                <div class="barra-progreso">
+                    <div class="barra-llena" id="barra2"></div>
+                </div>
+            </div>
+
+            <button class="boton-salir" onclick="volverAlMenu()">← Volver al Menú</button>
+        </div>
+
+        <!-- JUEGO 3: EXPERTO EN MAYÚSCULAS -->
+        <div class="juego" id="juego3" style="display:none;">
+            <div class="encabezado-juego">
+                <h2>Nivel 3: Experto en Mayúsculas</h2>
+                <div class="info-juego">
+                    <span class="puntuacion">Puntuación: <strong id="puntos3">0</strong></span>
+                    <span class="tiempo">Tiempo: <strong id="timer3">50</strong>s</span>
+                    <span class="progreso"><strong id="progreso3">1</strong>/10</span>
+                </div>
+            </div>
+
+            <div class="contenido-juego">
+                <div class="pregunta">
+                    <p id="pregunta3"></p>
+                </div>
+
+                <div class="opciones" id="opciones3"></div>
+
+                <div class="barra-progreso">
+                    <div class="barra-llena" id="barra3"></div>
+                </div>
+            </div>
+
+            <button class="boton-salir" onclick="volverAlMenu()">← Volver al Menú</button>
+        </div>
+
+        <!-- PANTALLA DE RESULTADOS -->
+        <div class="pantalla-resultados" id="pantallResultados" style="display:none;">
+            <div class="tarjeta-resultados">
+                <h2>¡Juego Terminado!</h2>
+                <div class="resultado-final">
+                    <p class="puntuacion-final">Puntuación Final: <span id="puntuacionFinal">0</span></p>
+                    <p class="tiempo-restante">Tiempo utilizado: <span id="tiempoUtilizado">0</span>s</p>
+                    <p class="respuestas-correctas">Respuestas correctas: <span id="respuestasCorrectas">0</span>/10</p>
+                </div>
+
+                <div class="botones-resultado">
+                    <button class="boton-reintentar" onclick="reiniciarJuegoActual()">Reintentar este Nivel</button>
+                    <button class="boton-menu" onclick="volverAlMenu()">Volver al Menú</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

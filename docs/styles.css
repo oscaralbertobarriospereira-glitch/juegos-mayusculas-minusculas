@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    animation: fadeIn 0.6s ease-in;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* MENÚ PRINCIPAL */
+.menu-principal {
+    display: flex;
+    justify-content: center;
+    animation: slideUp 0.8s ease-out;
+}
+
+.opciones-juego {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.boton-juego {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+.boton-juego:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.boton-juego .nivel {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #667eea;
+}
+
+.boton-juego .titulo {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+.boton-juego .descripcion {
+    font-size: 0.95em;
+    color: #666;
+}
+
+.boton-juego .dificultad {
+    font-size: 0.85em;
+    color: #764ba2;
+    font-weight: 600;
+}
+
+.nivel-1 {
+    border-left: 5px solid #4CAF50;
+}
+
+.nivel-2 {
+    border-left: 5px solid #FF9800;
+}
+
+.nivel-3 {
+    border-left: 5px solid #F44336;
+}
+
+/* ESTILOS DE JUEGO */
+.juego {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.6s ease-out;
+}
+
+.encabezado-juego {
+    margin-bottom: 30px;
+}
+
+.encabezado-juego h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.info-juego {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-juego span {
+    background: #f5f5f5;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.info-juego strong {
+    color: #667eea;
+    font-size: 1.2em;
+}
+
+/* CONTENIDO DEL JUEGO */
+.contenido-juego {
+    margin-bottom: 30px;
+}
+
+.pregunta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 1.3em;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.opcion {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.opcion:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+    transform: translateX(5px);
+}
+
+.opcion.correcta {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.opcion.incorrecta {
+    background: #f8d7da;
+    border-color: #f44336;
+    color: #721c24;
+}
+
+.opcion.deshabilitada {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* BARRA DE PROGRESO */
+.barra-progreso {
+    background: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.barra-llena {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transition: width 0.3s ease;
+}
+
+/* BOTONES */
+.boton-salir {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+}
+
+.boton-salir:hover {
+    background: #444;
+}
+
+/* PANTALLA DE RESULTADOS */
+.pantalla-resultados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.tarjeta-resultados {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.5s ease-out;
+}
+
+.tarjeta-resultados h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.resultado-final {
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.resultado-final p {
+    font-size: 1.2em;
+    margin: 12px 0;
+    color: #333;
+}
+
+.resultado-final span {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.botones-resultado {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.boton-reintentar, .boton-menu {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.boton-reintentar {
+    background: #667eea;
+    color: white;
+}
+
+.boton-reintentar:hover {
+    background: #5568d3;
+}
+
+.boton-menu {
+    background: #666;
+    color: white;
+}
+
+.boton-menu:hover {
+    background: #444;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .opciones-juego {
+        grid-template-columns: 1fr;
+    }
+
+    .juego {
+        padding: 20px;
+    }
+
+    .pregunta {
+        font-size: 1.1em;
+        padding: 20px;
+    }
+
+    .info-juego {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
