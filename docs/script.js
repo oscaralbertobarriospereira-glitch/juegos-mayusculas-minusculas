@@ -1,362 +1,437 @@
 // DATOS DE LOS JUEGOS
 
-// JUEGO 1: Corrección Básica (30 segundos)
-const juego1Preguntas = [
-    {
-        pregunta: "¿Cuál es la corrección correcta?",
-        oracion: "juan es mi mejor amigo.",
-        opciones: ["Juan es mi mejor amigo.", "juan es mi mejor amigo.", "JUAN es mi mejor amigo."],
-        respuestaCorrecta: 0
-    },
-    {
-        pregunta: "Selecciona la oración correcta:",
-        oracion: "maria estudia en la escuela.",
-        opciones: ["maria estudia en la escuela.", "Maria estudia en la escuela.", "MARIA ESTUDIA EN LA ESCUELA."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál está bien escrita?",
-        oracion: "pedro y carlos juegan juntos.",
-        opciones: ["PEDRO Y CARLOS JUEGAN JUNTOS.", "Pedro y Carlos juegan juntos.", "pedro y carlos juegan juntos."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "Elige la forma correcta:",
-        oracion: "ana María corrió en la carrera.",
-        opciones: ["Ana María corrió en la carrera.", "ana maría corrió en la carrera.", "ANA MARÍA CORRIÓ EN LA CARRERA."],
-        respuestaCorrecta: 0
-    },
-    {
-        pregunta: "¿Cuál comienza correctamente?",
-        oracion: "santiago vive en una casa grande.",
-        opciones: ["santiago vive en una casa grande.", "Santiago vive en una casa grande.", "SANTIAGO VIVE EN UNA CASA GRANDE."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "Selecciona la opción correcta:",
-        oracion: "lucia y david son hermanos.",
-        opciones: ["Lucia y David son hermanos.", "lucia y david son hermanos.", "LUCIA Y DAVID SON HERMANOS."],
-        respuestaCorrecta: 0
-    },
-    {
-        pregunta: "¿Cuál está correctamente escrita?",
-        oracion: "después de la lluvia salió el sol.",
-        opciones: ["Después de la lluvia salió el sol.", "después de la lluvia salió el sol.", "DESPUÉS DE LA LLUVIA SALIÓ EL SOL."],
-        respuestaCorrecta: 0
-    },
-    {
-        pregunta: "Elige la forma adecuada:",
-        oracion: "ese libro es muy interesante.",
-        opciones: ["ese libro es muy interesante.", "Ese libro es muy interesante.", "ESE LIBRO ES MUY INTERESANTE."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál es la correcta?",
-        oracion: "nosotros vamos al cine el sábado.",
-        opciones: ["Nosotros vamos al cine el sábado.", "nosotros vamos al cine el sábado.", "NOSOTROS VAMOS AL CINE EL SÁBADO."],
-        respuestaCorrecta: 0
-    },
-    {
-        pregunta: "Selecciona la opción correcta:",
-        oracion: "mi amiga trabaja en un hospital.",
-        opciones: ["mi amiga trabaja en un hospital.", "Mi amiga trabaja en un hospital.", "MI AMIGA TRABAJA EN UN HOSPITAL."],
-        respuestaCorrecta: 1
-    }
+// QUIZ
+const datosQuiz = [
+    { pregunta: "¿Cuál es la forma correcta?", respuesta: "Juan es mi mejor amigo.", opciones: ["Juan es mi mejor amigo.", "juan es mi mejor amigo.", "JUAN es mi mejor amigo."] },
+    { pregunta: "Selecciona la oración correcta:", respuesta: "María estudia en la escuela.", opciones: ["maria estudia en la escuela.", "Maria estudia en la escuela.", "MARIA ESTUDIA EN LA ESCUELA."] },
+    { pregunta: "¿Cuál está bien escrita?", respuesta: "Pedro y Carlos juegan juntos.", opciones: ["PEDRO Y CARLOS JUEGAN JUNTOS.", "Pedro y Carlos juegan juntos.", "pedro y carlos juegan juntos."] },
+    { pregunta: "Elige la forma correcta:", respuesta: "Ana María corrió en la carrera.", opciones: ["Ana María corrió en la carrera.", "ana maría corrió en la carrera.", "ANA MARÍA CORRIÓ EN LA CARRERA."] },
+    { pregunta: "¿Cuál comienza correctamente?", respuesta: "Santiago vive en una casa grande.", opciones: ["santiago vive en una casa grande.", "Santiago vive en una casa grande.", "SANTIAGO VIVE EN UNA CASA GRANDE."] },
+    { pregunta: "Selecciona la opción correcta:", respuesta: "Lucía y David son hermanos.", opciones: ["Lucia y David son hermanos.", "lucia y david son hermanos.", "LUCIA Y DAVID SON HERMANOS."] },
+    { pregunta: "¿Cuál está correctamente escrita?", respuesta: "Después de la lluvia salió el sol.", opciones: ["Después de la lluvia salió el sol.", "después de la lluvia salió el sol.", "DESPUÉS DE LA LLUVIA SALIÓ EL SOL."] },
+    { pregunta: "Elige la forma adecuada:", respuesta: "Ese libro es muy interesante.", opciones: ["ese libro es muy interesante.", "Ese libro es muy interesante.", "ESE LIBRO ES MUY INTERESANTE."] },
+    { pregunta: "¿Cuál es la correcta?", respuesta: "Nosotros vamos al cine el sábado.", opciones: ["Nosotros vamos al cine el sábado.", "nosotros vamos al cine el sábado.", "NOSOTROS VAMOS AL CINE EL SÁBADO."] },
+    { pregunta: "Selecciona la opción correcta:", respuesta: "Mi amiga trabaja en un hospital.", opciones: ["mi amiga trabaja en un hospital.", "Mi amiga trabaja en un hospital.", "MI AMIGA TRABAJA EN UN HOSPITAL."] }
 ];
 
-// JUEGO 2: Clasificación Avanzada (40 segundos)
-const juego2Preguntas = [
-    {
-        pregunta: "¿Cuál es un nombre propio?",
-        oracion: "En la oración: 'El doctor García atiende en la clínica'",
-        opciones: ["doctor", "clínica", "García"],
-        respuestaCorrecta: 2
-    },
-    {
-        pregunta: "Identifica el nombre propio:",
-        oracion: "París es la capital de Francia.",
-        opciones: ["capital", "Francia", "es"],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál es el título o cargo que debe llevar mayúscula?",
-        oracion: "El profesor López enseña matemáticas.",
-        opciones: ["profesor", "López", "matemáticas"],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál es un nombre propio en esta frase?",
-        oracion: "Mi hermana María vive en Barcelona.",
-        opciones: ["hermana", "vive", "Barcelona"],
-        respuestaCorrecta: 2
-    },
-    {
-        pregunta: "Selecciona el nombre propio:",
-        oracion: "El Museo del Prado está en Madrid.",
-        opciones: ["museo", "Museo del Prado", "está"],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Qué palabra es un nombre propio?",
-        oracion: "Carlos trabaja en la empresa Tecnología Plus.",
-        opciones: ["empresa", "Tecnología Plus", "trabaja"],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "Identifica el nombre propio:",
-        oracion: "La revista Científica publica artículos importantes.",
-        opciones: ["revista", "Científica", "artículos"],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál debe ir con mayúscula inicial?",
-        oracion: "El río Amazonas es el más largo.",
-        opciones: ["río", "Amazonas", "largo"],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál es el nombre propio?",
-        oracion: "Elena estudia en la Universidad Nacional.",
-        opciones: ["estudia", "Universidad Nacional", "Elena"],
-        respuestaCorrecta: 2
-    },
-    {
-        pregunta: "Selecciona el nombre propio:",
-        oracion: "Visitamos el Palacio de Versalles el verano pasado.",
-        opciones: ["visitamos", "Palacio de Versalles", "verano"],
-        respuestaCorrecta: 1
-    }
+// ORDENAR
+const datosOrdenar = [
+    { instruccion: "Ordena la oración correctamente", palabras: ["amigo", "mejor", "mi", "Juan", "es"], respuesta: ["Juan", "es", "mi", "mejor", "amigo"] },
+    { instruccion: "Completa la frase correctamente", palabras: ["escuela", "en", "estudia", "la", "María"], respuesta: ["María", "estudia", "en", "la", "escuela"] },
+    { instruccion: "Ordena las palabras", palabras: ["juntos", "juegan", "Carlos", "Pedro", "y"], respuesta: ["Pedro", "y", "Carlos", "juegan", "juntos"] },
+    { instruccion: "Forma la oración correcta", palabras: ["grande", "una", "en", "casa", "vive", "Santiago"], respuesta: ["Santiago", "vive", "en", "una", "casa", "grande"] },
+    { instruccion: "Ordena correctamente", palabras: ["sol", "el", "salió", "lluvia", "la", "de", "Después"], respuesta: ["Después", "de", "la", "lluvia", "salió", "el", "sol"] },
+    { instruccion: "Completa la frase", palabras: ["hermanos", "son", "David", "y", "Lucía"], respuesta: ["Lucía", "y", "David", "son", "hermanos"] },
+    { instruccion: "Forma la oración", palabras: ["muy", "es", "interesante", "Este", "libro"], respuesta: ["Este", "libro", "es", "muy", "interesante"] },
+    { instruccion: "Ordena las palabras", palabras: ["hospital", "en", "un", "trabaja", "amiga", "Mi"], respuesta: ["Mi", "amiga", "trabaja", "en", "un", "hospital"] }
 ];
 
-// JUEGO 3: Experto en Mayúsculas (50 segundos)
-const juego3Preguntas = [
-    {
-        pregunta: "¿Cuál opción sigue correctamente las reglas de mayúsculas?",
-        oracion: "Regla: Los puntos cardinales se escriben con minúscula.",
-        opciones: ["Vamos al sur de la ciudad.", "Vamos al Sur de la ciudad.", "vamos al sur de la ciudad."]
-        ,
-        respuestaCorrecta: 0
-    },
-    {
-        pregunta: "¿Cuál está correcta según las normas?",
-        oracion: "Los títulos de libros/películas: solo la primera palabra con mayúscula.",
-        opciones: ["El Senor De Los Anillos", "El señor de los anillos", "El Señor de los Anillos"],
-        respuestaCorrecta: 2
-    },
-    {
-        pregunta: "¿Cuál es la forma correcta?",
-        oracion: "Regla: Las siglas se escriben en mayúsculas.",
-        opciones: ["La Onu trabaja por la paz.", "La ONU trabaja por la paz.", "La onu trabaja por la paz."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál opción respeta las reglas de mayúsculas?",
-        oracion: "Los meses y días van en minúscula, no después de punto y seguido.",
-        opciones: ["El próximo Jueves llegaré.", "El próximo jueves llegaré.", "El próximo JUEVES llegaré."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál es la correcta?",
-        oracion: "Regla: Después de punto y seguido siempre va mayúscula.",
-        opciones: ["Corrió rápido. llegó a tiempo.", "Corrió rápido. Llegó a tiempo.", "Corrió rápido. llegó A tiempo."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál sigue las normas correctamente?",
-        oracion: "Los gentilicios (nacionalidades) van en minúscula.",
-        opciones: ["Mi abuela es Colombiana y mi abuelo Español.", "Mi abuela es colombiana y mi abuelo español.", "Mi Abuela es Colombiana y mi Abuelo Español."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál está bien escrita?",
-        oracion: "Regla: Las palabras después de dos puntos van en minúscula (excepto nombres propios).",
-        opciones: ["El mensaje decía: Vuelve pronto.", "El mensaje decía: vuelve pronto.", "El mensaje decía: VUELVE PRONTO."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál es la forma correcta?",
-        oracion: "Regla: Los nombres de disciplinas no van en mayúscula.",
-        opciones: ["Estudio Matemáticas y Literatura.", "Estudio matemáticas y literatura.", "Estudio MATEMÁTICAS Y LITERATURA."],
-        respuestaCorrecta: 1
-    },
-    {
-        pregunta: "¿Cuál sigue las reglas de mayúsculas?",
-        oracion: "Después de números romanos en puntuación, va minúscula.",
-        opciones: ["Los Capítulos I. Inicio y II. Desarrollo.", "Los Capítulos I. inicio y II. desarrollo.", "Los capítulos I. inicio y II. desarrollo."],
-        respuestaCorrecta: 2
-    },
-    {
-        pregunta: "¿Cuál está correctamente escrita?",
-        oracion: "Regla: Las instituciones y organismos van con mayúsculas iniciales.",
-        opciones: ["la Policía Nacional patrulla las calles.", "La Policía Nacional patrulla las calles.", "La policía nacional patrulla las calles."],
-        respuestaCorrecta: 1
-    }
+// EMPAREJAR
+const datosEmparejar = [
+    { izquierda: ["Mayúscula inicial", "Nombre propio", "Primer palabra de oración"], derecha: ["Se escriben con minúscula", "Persona, lugar o cosa específica", "Siempre va con mayúscula"] },
+    { izquierda: ["Punto y seguido", "Gentilicio", "Siglas"], derecha: ["Nacionalidad de una persona", "Abreviaciones en mayúsculas", "Marca el inicio de nueva oración con mayúscula"] },
+    { izquierda: ["Principio de texto", "Disciplinas académicas", "Instituciones"], derecha: ["Minúscula (matemáticas, historia)", "Van con mayúsculas iniciales", "Mayúscula obligatoria"] },
+    { izquierda: ["Días de la semana", "Meses del año", "Puntos cardinales"], derecha: ["Minúscula (enero, febrero)", "Minúscula (norte, sur)", "Minúscula (lunes, martes)"] },
+    { izquierda: ["Títulos de libros", "Direcciones web", "Nombres de periódicos"], derecha: ["Primera palabra en mayúscula", "Dependen del estilo usado", "Generalmente con mayúsculas"] },
+    { izquierda: ["Después de dos puntos", "Palabras en enumeración", "Abreviaturas personales"], derecha: ["Mayúscula si comienza oración", "Minúscula en general", "Se escriben en mayúscula"] },
+    { izquierda: ["Conectores de inicio", "Números romanos", "Apodos o sobrenombres"], derecha: ["Van con mayúscula", "Se escriben con mayúscula", "Se escriben con mayúscula"] }
+];
+
+// VERDADERO/FALSO
+const datosVerdaderoFalso = [
+    { pregunta: "Los nombres propios siempre se escriben con mayúscula inicial", respuesta: true },
+    { pregunta: "Los días de la semana se escriben siempre con mayúscula", respuesta: false },
+    { pregunta: "Después de un punto seguido va mayúscula", respuesta: true },
+    { pregunta: "Las disciplinas académicas se escriben con mayúscula", respuesta: false },
+    { pregunta: "Los gentilicios se escriben con mayúscula", respuesta: false },
+    { pregunta: "Las siglas se escriben en mayúsculas", respuesta: true },
+    { pregunta: "Los puntos cardinales se escriben con mayúscula", respuesta: false },
+    { pregunta: "El primer nombre de una persona siempre va con mayúscula", respuesta: true },
+    { pregunta: "En un título de libro, todas las palabras llevan mayúscula", respuesta: false },
+    { pregunta: "Después de dos puntos siempre va mayúscula", respuesta: false }
+];
+
+// ARCADE
+const datosArcade = [
+    { pregunta: "¿Cuál es correcto?", respuesta: "Juan es mi amigo.", opciones: ["Juan es mi amigo.", "juan es mi amigo.", "JUAN ES MI AMIGO."] },
+    { pregunta: "Selecciona la forma correcta", respuesta: "María estudia.", opciones: ["maria estudia.", "María estudia.", "MARÍA ESTUDIA."] },
+    { pregunta: "¿Cuál está bien?", respuesta: "Después de la lluvia.", opciones: ["después de la lluvia.", "Después de la lluvia.", "DESPUÉS DE LA LLUVIA."] },
+    { pregunta: "Elige la correcta", respuesta: "París es hermosa.", opciones: ["paris es hermosa.", "París es hermosa.", "PARÍS ES HERMOSA."] },
+    { pregunta: "¿Cuál es la forma adecuada?", respuesta: "Pedro y Ana.", opciones: ["pedro y ana.", "Pedro y Ana.", "PEDRO Y ANA."] },
+    { pregunta: "Selecciona la opción", respuesta: "Verdadero: Los nombres propios van con mayúscula", opciones: ["Falso", "Verdadero", "A veces"] },
+    { pregunta: "¿Verdadero o Falso?", respuesta: "Verdadero: Después de punto va mayúscula", opciones: ["Falso", "Verdadero", "Depende"] },
+    { pregunta: "¿Cuál está correcta?", respuesta: "Estudió matemáticas.", opciones: ["Estudió Matemáticas.", "Estudió matemáticas.", "ESTUDIÓ MATEMÁTICAS."] }
 ];
 
 // VARIABLES GLOBALES
-let juegoActual = null;
+let modalidadActual = null;
 let preguntaActual = 0;
 let puntuacion = 0;
 let tiempoRestante = 0;
 let tiempoInicial = 0;
-let intervaloTiempo = null;
+let intervalo = null;
 let respuestasCorrectas = 0;
 let juegoTerminado = false;
-let preguntas = [];
+let elementoArrastrado = null;
 
-// Función para iniciar un juego
-function iniciarJuego(nivel) {
-    juegoActual = nivel;
+function seleccionarModalidad(modalidad) {
+    modalidadActual = modalidad;
     preguntaActual = 0;
     puntuacion = 0;
     respuestasCorrectas = 0;
     juegoTerminado = false;
 
-    // Seleccionar preguntas según el nivel
-    if (nivel === 1) {
-        preguntas = [...juego1Preguntas].sort(() => Math.random() - 0.5);
-        tiempoRestante = 30;
-        tiempoInicial = 30;
-    } else if (nivel === 2) {
-        preguntas = [...juego2Preguntas].sort(() => Math.random() - 0.5);
-        tiempoRestante = 40;
-        tiempoInicial = 40;
-    } else if (nivel === 3) {
-        preguntas = [...juego3Preguntas].sort(() => Math.random() - 0.5);
-        tiempoRestante = 50;
-        tiempoInicial = 50;
-    }
-
-    // Ocultar menú y mostrar juego
     document.getElementById('menuPrincipal').style.display = 'none';
     document.getElementById('pantallResultados').style.display = 'none';
-    document.getElementById('juego' + nivel).style.display = 'block';
 
-    // Iniciar temporizador
+    switch(modalidad) {
+        case 'quiz':
+            tiempoInicial = 45;
+            iniciarQuiz();
+            break;
+        case 'ordenar':
+            tiempoInicial = 60;
+            iniciarOrdenar();
+            break;
+        case 'emparejar':
+            tiempoInicial = 70;
+            iniciarEmparejar();
+            break;
+        case 'verdaderofalso':
+            tiempoInicial = 30;
+            iniciarVerdaderoFalso();
+            break;
+        case 'arcade':
+            tiempoInicial = 20;
+            iniciarArcade();
+            break;
+    }
+
+    tiempoRestante = tiempoInicial;
     iniciarTemporizador();
-
-    // Mostrar primera pregunta
-    mostrarPregunta();
 }
 
-// Función para iniciar temporizador
 function iniciarTemporizador() {
-    clearInterval(intervaloTiempo);
-    intervaloTiempo = setInterval(() => {
+    clearInterval(intervalo);
+    intervalo = setInterval(() => {
         tiempoRestante--;
-        document.getElementById('timer' + juegoActual).textContent = tiempoRestante;
+        const elementoTiempo = document.getElementById('timer' + capitalizar(modalidadActual));
+        if (elementoTiempo) {
+            elementoTiempo.textContent = tiempoRestante;
+        }
 
         if (tiempoRestante <= 0) {
             juegoTerminado = true;
-            clearInterval(intervaloTiempo);
+            clearInterval(intervalo);
             mostrarResultados();
         }
     }, 1000);
 }
 
-// Función para mostrar la pregunta actual
-function mostrarPregunta() {
-    if (preguntaActual >= preguntas.length) {
-        juegoTerminado = true;
-        clearInterval(intervaloTiempo);
-        mostrarResultados();
-        return;
-    }
-
-    const pregunta = preguntas[preguntaActual];
-    const contenedorPregunta = document.getElementById('pregunta' + juegoActual);
-    const contenedorOpciones = document.getElementById('opciones' + juegoActual);
-
-    contenedorPregunta.innerHTML = `<strong>${pregunta.pregunta}</strong><br><em>"${pregunta.oracion}"</em>`;
-
-    contenedorOpciones.innerHTML = '';
-    pregunta.opciones.forEach((opcion, index) => {
-        const botonOpcion = document.createElement('button');
-        botonOpcion.className = 'opcion';
-        botonOpcion.textContent = opcion;
-        botonOpcion.onclick = () => seleccionarOpcion(index);
-        contenedorOpciones.appendChild(botonOpcion);
-    });
-
-    // Actualizar progreso
-    document.getElementById('progreso' + juegoActual).textContent = preguntaActual + 1;
-
-    // Actualizar barra de progreso
-    const porcentaje = ((preguntaActual + 1) / preguntas.length) * 100;
-    document.getElementById('barra' + juegoActual).style.width = porcentaje + '%';
+function capitalizar(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// Función para seleccionar una opción
-function seleccionarOpcion(indiceOpcion) {
+// QUIZ
+function iniciarQuiz() {
+    document.getElementById('juegoQuiz').style.display = 'block';
+    mostrarPreguntaQuiz();
+}
+
+function mostrarPreguntaQuiz() {
+    if (preguntaActual >= datosQuiz.length || juegoTerminado) return;
+
+    const pregunta = datosQuiz[preguntaActual];
+    document.getElementById('preguntaQuiz').textContent = pregunta.pregunta;
+    document.getElementById('progresoQuiz').textContent = preguntaActual + 1;
+    document.getElementById('barraQuiz').style.width = ((preguntaActual + 1) / datosQuiz.length * 100) + '%';
+
+    const contenedor = document.getElementById('opcionesQuiz');
+    contenedor.innerHTML = '';
+    pregunta.opciones.forEach((opcion, i) => {
+        const btn = document.createElement('div');
+        btn.className = 'opcion';
+        btn.textContent = opcion;
+        btn.onclick = () => responderQuiz(i, opcion === pregunta.respuesta);
+        contenedor.appendChild(btn);
+    });
+}
+
+function responderQuiz(index, esCorrecta) {
     if (juegoTerminado) return;
-
-    const pregunta = preguntas[preguntaActual];
-    const opciones = document.querySelectorAll('#opciones' + juegoActual + ' .opcion');
-
-    // Deshabilitar todas las opciones
-    opciones.forEach(opt => opt.classList.add('deshabilitada'));
-
-    // Mostrar resultado
-    if (indiceOpcion === pregunta.respuestaCorrecta) {
-        opciones[indiceOpcion].classList.add('correcta');
+    juegoTerminado = true;
+    
+    const opciones = document.querySelectorAll('#opcionesQuiz .opcion');
+    opciones[index].classList.add(esCorrecta ? 'correcta' : 'incorrecta');
+    
+    if (esCorrecta) {
         respuestasCorrectas++;
-        
-        // Calcular puntos según dificultad
-        if (juegoActual === 1) {
-            puntuacion += 10;
-        } else if (juegoActual === 2) {
-            puntuacion += 15;
-        } else if (juegoActual === 3) {
-            puntuacion += 20;
-        }
-    } else {
-        opciones[indiceOpcion].classList.add('incorrecta');
-        opciones[pregunta.respuestaCorrecta].classList.add('correcta');
+        puntuacion += 10;
     }
 
-    // Actualizar puntuación
-    document.getElementById('puntos' + juegoActual).textContent = puntuacion;
+    document.getElementById('puntosQuiz').textContent = puntuacion;
 
-    // Pasar a siguiente pregunta después de 1.5 segundos
     setTimeout(() => {
         preguntaActual++;
-        mostrarPregunta();
+        juegoTerminado = false;
+        mostrarPreguntaQuiz();
     }, 1500);
 }
 
-// Función para mostrar resultados
+// ORDENAR
+function iniciarOrdenar() {
+    document.getElementById('juegoOrdenar').style.display = 'block';
+    mostrarPreguntaOrdenar();
+}
+
+function mostrarPreguntaOrdenar() {
+    if (preguntaActual >= datosOrdenar.length || juegoTerminado) return;
+
+    const pregunta = datosOrdenar[preguntaActual];
+    document.getElementById('preguntaOrdenar').textContent = pregunta.instruccion;
+    document.getElementById('progresoOrdenar').textContent = preguntaActual + 1;
+    document.getElementById('barraOrdenar').style.width = ((preguntaActual + 1) / datosOrdenar.length * 100) + '%';
+
+    const zonaPalabras = document.getElementById('zonaPalabras');
+    zonaPalabras.innerHTML = '';
+    const palabrasOrdenadas = [...pregunta.palabras].sort(() => Math.random() - 0.5);
+    
+    palabrasOrdenadas.forEach((palabra, i) => {
+        const div = document.createElement('div');
+        div.className = 'palabra';
+        div.draggable = true;
+        div.textContent = palabra;
+        div.dataset.valor = palabra;
+        div.ondragstart = (e) => {
+            elementoArrastrado = e.target;
+            e.target.style.opacity = '0.5';
+        };
+        div.ondragend = (e) => {
+            e.target.style.opacity = '1';
+        };
+        zonaPalabras.appendChild(div);
+    });
+
+    const zonaRespuesta = document.getElementById('zonaRespuesta');
+    zonaRespuesta.innerHTML = '';
+    zonaRespuesta.ondragover = (e) => e.preventDefault();
+    zonaRespuesta.ondrop = (e) => {
+        e.preventDefault();
+        if (elementoArrastrado) {
+            const clone = elementoArrastrado.cloneNode(true);
+            clone.className = 'palabra palabra-zona';
+            clone.draggable = false;
+            zonaRespuesta.appendChild(clone);
+            elementoArrastrado.remove();
+
+            const palabrasActuales = Array.from(zonaRespuesta.querySelectorAll('.palabra')).map(p => p.textContent);
+            if (palabrasActuales.join('') === pregunta.respuesta.join('')) {
+                respuestasCorrectas++;
+                puntuacion += 15;
+                document.getElementById('puntosOrdenar').textContent = puntuacion;
+                
+                setTimeout(() => {
+                    preguntaActual++;
+                    mostrarPreguntaOrdenar();
+                }, 1500);
+            }
+        }
+    };
+}
+
+// EMPAREJAR
+function iniciarEmparejar() {
+    document.getElementById('juegoEmparejar').style.display = 'block';
+    mostrarPreguntaEmparejar();
+}
+
+function mostrarPreguntaEmparejar() {
+    if (preguntaActual >= datosEmparejar.length || juegoTerminado) return;
+
+    const pregunta = datosEmparejar[preguntaActual];
+    document.getElementById('progresoEmparejar').textContent = preguntaActual + 1;
+    document.getElementById('barraEmparejar').style.width = ((preguntaActual + 1) / datosEmparejar.length * 100) + '%';
+
+    const contenedor = document.getElementById('contenedorEmparejar');
+    contenedor.innerHTML = '';
+
+    const columnaIzq = document.createElement('div');
+    columnaIzq.className = 'columna-emparejar';
+    pregunta.izquierda.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'item-emparejar';
+        div.textContent = item;
+        div.dataset.indice = i;
+        div.draggable = true;
+        div.ondragstart = (e) => {
+            elementoArrastrado = e.target;
+            e.target.classList.add('arrastrado');
+        };
+        div.ondragend = (e) => {
+            e.target.classList.remove('arrastrado');
+        };
+        columnaIzq.appendChild(div);
+    });
+
+    const columnaDer = document.createElement('div');
+    columnaDer.className = 'columna-emparejar';
+    const derechaOrdenada = [...pregunta.derecha].sort(() => Math.random() - 0.5);
+    derechaOrdenada.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'item-emparejar';
+        div.textContent = item;
+        div.dataset.original = pregunta.derecha.indexOf(item);
+        div.ondragover = (e) => e.preventDefault();
+        div.ondrop = (e) => {
+            e.preventDefault();
+            if (elementoArrastrado && elementoArrastrado.dataset.indice === div.dataset.original.toString()) {
+                div.classList.add('emparejado');
+                elementoArrastrado.classList.add('emparejado');
+                respuestasCorrectas++;
+                puntuacion += 12;
+                document.getElementById('puntosEmparejar').textContent = puntuacion;
+
+                if (document.querySelectorAll('#contenedorEmparejar .item-emparejar:not(.emparejado)').length === 0) {
+                    setTimeout(() => {
+                        preguntaActual++;
+                        mostrarPreguntaEmparejar();
+                    }, 1500);
+                }
+            }
+        };
+        columnaDer.appendChild(div);
+    });
+
+    contenedor.appendChild(columnaIzq);
+    contenedor.appendChild(columnaDer);
+}
+
+// VERDADERO/FALSO
+function iniciarVerdaderoFalso() {
+    document.getElementById('juegoVF').style.display = 'block';
+    mostrarPreguntaVF();
+}
+
+function mostrarPreguntaVF() {
+    if (preguntaActual >= datosVerdaderoFalso.length || juegoTerminado) return;
+
+    const pregunta = datosVerdaderoFalso[preguntaActual];
+    document.getElementById('preguntaVF').textContent = pregunta.pregunta;
+    document.getElementById('progresoVF').textContent = preguntaActual + 1;
+    document.getElementById('barraVF').style.width = ((preguntaActual + 1) / datosVerdaderoFalso.length * 100) + '%';
+}
+
+function responderVF(respuesta) {
+    if (juegoTerminado) return;
+    juegoTerminado = true;
+    
+    const pregunta = datosVerdaderoFalso[preguntaActual];
+    const esCorrecta = respuesta === pregunta.respuesta;
+    
+    const botones = document.querySelectorAll('.btn-vf');
+    botones.forEach(b => b.disabled = true);
+
+    if (esCorrecta) {
+        respuestasCorrectas++;
+        puntuacion += 8;
+    }
+
+    document.getElementById('puntosVF').textContent = puntuacion;
+
+    setTimeout(() => {
+        preguntaActual++;
+        botones.forEach(b => b.disabled = false);
+        juegoTerminado = false;
+        mostrarPreguntaVF();
+    }, 1500);
+}
+
+// ARCADE
+function iniciarArcade() {
+    document.getElementById('juegoArcade').style.display = 'block';
+    mostrarPreguntaArcade();
+}
+
+function mostrarPreguntaArcade() {
+    if (preguntaActual >= datosArcade.length || juegoTerminado) return;
+
+    const pregunta = datosArcade[preguntaActual];
+    document.getElementById('preguntaArcade').innerHTML = pregunta.pregunta;
+
+    const contenedor = document.getElementById('opcionesArcade');
+    contenedor.innerHTML = '';
+    pregunta.opciones.forEach((opcion, i) => {
+        const btn = document.createElement('div');
+        btn.className = 'opcion-arcade';
+        btn.textContent = opcion;
+        btn.onclick = () => responderArcade(i, opcion === pregunta.respuesta || (opcion === 'Verdadero' && pregunta.respuesta.includes('Verdadero')) || (opcion === 'Falso' && pregunta.respuesta.includes('Falso')));
+        contenedor.appendChild(btn);
+    });
+}
+
+function responderArcade(index, esCorrecta) {
+    if (juegoTerminado) return;
+    juegoTerminado = true;
+    
+    const opciones = document.querySelectorAll('#opcionesArcade .opcion-arcade');
+    opciones.forEach(o => o.style.pointerEvents = 'none');
+    
+    opciones[index].classList.add(esCorrecta ? 'correcta' : 'incorrecta');
+    
+    if (esCorrecta) {
+        respuestasCorrectas++;
+        puntuacion += 25;
+    }
+
+    document.getElementById('puntosArcade').textContent = puntuacion;
+
+    setTimeout(() => {
+        preguntaActual++;
+        juegoTerminado = false;
+        mostrarPreguntaArcade();
+    }, 800);
+}
+
 function mostrarResultados() {
-    clearInterval(intervaloTiempo);
+    clearInterval(intervalo);
     juegoTerminado = true;
 
     const tiempoUtilizado = tiempoInicial - tiempoRestante;
+    const mensajes = [
+        '¡Excelente trabajo!',
+        '¡Muy bien, sigue así!',
+        '¡Buen desempeño!',
+        '¡Puedes hacerlo mejor!',
+        '¡Sigue practicando!'
+    ];
+    const indice = Math.floor(puntuacion / 50);
+    const mensaje = mensajes[Math.min(indice, mensajes.length - 1)];
 
-    document.getElementById('juego' + juegoActual).style.display = 'none';
-    document.getElementById('pantallResultados').style.display = 'flex';
+    document.getElementById('juegoQuiz').style.display = 'none';
+    document.getElementById('juegoOrdenar').style.display = 'none';
+    document.getElementById('juegoEmparejar').style.display = 'none';
+    document.getElementById('juegoVF').style.display = 'none';
+    document.getElementById('juegoArcade').style.display = 'none';
+    document.getElementById('pantallResultados').style.display = 'block';
 
     document.getElementById('puntuacionFinal').textContent = puntuacion;
-    document.getElementById('tiempoUtilizado').textContent = tiempoUtilizado;
+    document.getElementById('mensajeFinal').textContent = mensaje;
     document.getElementById('respuestasCorrectas').textContent = respuestasCorrectas;
+    document.getElementById('tiempoFinal').textContent = tiempoUtilizado;
 }
 
-// Función para reintentar el juego actual
-function reiniciarJuegoActual() {
-    iniciarJuego(juegoActual);
-}
-
-// Función para volver al menú
 function volverAlMenu() {
-    clearInterval(intervaloTiempo);
-    juegoTerminado = true;
-
-    document.getElementById('menuPrincipal').style.display = 'flex';
-    document.getElementById('juego1').style.display = 'none';
-    document.getElementById('juego2').style.display = 'none';
-    document.getElementById('juego3').style.display = 'none';
+    clearInterval(intervalo);
+    document.getElementById('menuPrincipal').style.display = 'block';
+    document.getElementById('juegoQuiz').style.display = 'none';
+    document.getElementById('juegoOrdenar').style.display = 'none';
+    document.getElementById('juegoEmparejar').style.display = 'none';
+    document.getElementById('juegoVF').style.display = 'none';
+    document.getElementById('juegoArcade').style.display = 'none';
     document.getElementById('pantallResultados').style.display = 'none';
+    modalidadActual = null;
+}
 
-    juegoActual = null;
-    preguntaActual = 0;
-    puntuacion = 0;
-    respuestasCorrectas = 0;
+function reiniciarJuegoActual() {
+    seleccionarModalidad(modalidadActual);
 }

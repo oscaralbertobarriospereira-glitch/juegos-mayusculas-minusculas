@@ -3,132 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juegos de Mayúsculas y Minúsculas</title>
+    <title>Juegos Educativos - Mayúsculas y Minúsculas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🎮 Juegos de Mayúsculas y Minúsculas</h1>
-            <p>¡Elige un juego y demuestra tu dominio del uso correcto de mayúsculas!</p>
-        </header>
+        <!-- MENÚ PRINCIPAL -->
+        <div class="pantalla" id="menuPrincipal">
+            <header>
+                <h1>🎮 Juegos de Mayúsculas y Minúsculas</h1>
+                <p>¡Elige tu modalidad favorita y compite!</p>
+            </header>
 
-        <div class="menu-principal" id="menuPrincipal">
-            <div class="opciones-juego">
-                <button class="boton-juego nivel-1" onclick="iniciarJuego(1)">
-                    <span class="nivel">Nivel 1</span>
-                    <span class="titulo">Corrección Básica</span>
-                    <span class="descripcion">Corrige palabras al inicio de oración</span>
-                    <span class="dificultad">⭐ Principiante</span>
-                </button>
+            <div class="grid-modalidades">
+                <div class="tarjeta-modalidad" onclick="seleccionarModalidad('quiz')">
+                    <div class="icono">❓</div>
+                    <h3>Quiz Clásico</h3>
+                    <p>Responde preguntas de opción múltiple</p>
+                    <span class="badge">Reflexivo</span>
+                </div>
 
-                <button class="boton-juego nivel-2" onclick="iniciarJuego(2)">
-                    <span class="nivel">Nivel 2</span>
-                    <span class="titulo">Clasificación Avanzada</span>
-                    <span class="descripcion">Clasifica nombres propios y comunes</span>
-                    <span class="dificultad">⭐⭐ Intermedio</span>
-                </button>
+                <div class="tarjeta-modalidad" onclick="seleccionarModalidad('ordenar')">
+                    <div class="icono">🔤</div>
+                    <h3>Ordenar Palabras</h3>
+                    <p>Ordena las palabras correctamente</p>
+                    <span class="badge">Estratégico</span>
+                </div>
 
-                <button class="boton-juego nivel-3" onclick="iniciarJuego(3)">
-                    <span class="nivel">Nivel 3</span>
-                    <span class="titulo">Experto en Mayúsculas</span>
-                    <span class="descripcion">Completa reglas de mayúsculas complejas</span>
-                    <span class="dificultad">⭐⭐⭐ Experto</span>
-                </button>
+                <div class="tarjeta-modalidad" onclick="seleccionarModalidad('emparejar')">
+                    <div class="icono">🎯</div>
+                    <h3>Emparejar</h3>
+                    <p>Arrastra y empareja definiciones</p>
+                    <span class="badge">Precisión</span>
+                </div>
+
+                <div class="tarjeta-modalidad" onclick="seleccionarModalidad('verdaderofalso')">
+                    <div class="icono">✓✗</div>
+                    <h3>Verdadero/Falso</h3>
+                    <p>Responde rápidamente y gana puntos</p>
+                    <span class="badge">Velocidad</span>
+                </div>
+
+                <div class="tarjeta-modalidad" onclick="seleccionarModalidad('arcade')">
+                    <div class="icono">⚡</div>
+                    <h3>Carrera Contrarreloj</h3>
+                    <p>¡El modo más competitivo! ¡Rápido!</p>
+                    <span class="badge extremo">⚡ Extremo</span>
+                </div>
             </div>
         </div>
 
-        <!-- JUEGO 1: CORRECCIÓN BÁSICA -->
-        <div class="juego" id="juego1" style="display:none;">
+        <!-- JUEGO: QUIZ -->
+        <div class="pantalla" id="juegoQuiz" style="display:none;">
             <div class="encabezado-juego">
-                <h2>Nivel 1: Corrección Básica</h2>
+                <button class="btn-volver" onclick="volverAlMenu()">← Volver</button>
+                <h2>Quiz Clásico</h2>
                 <div class="info-juego">
-                    <span class="puntuacion">Puntuación: <strong id="puntos1">0</strong></span>
-                    <span class="tiempo">Tiempo: <strong id="timer1">30</strong>s</span>
-                    <span class="progreso"><strong id="progreso1">1</strong>/10</span>
+                    <span>Puntuación: <strong id="puntosQuiz">0</strong></span>
+                    <span>Tiempo: <strong id="timerQuiz">45</strong>s</span>
+                    <span><strong id="progresoQuiz">1</strong>/10</span>
                 </div>
             </div>
-
             <div class="contenido-juego">
-                <div class="pregunta">
-                    <p id="pregunta1"></p>
-                </div>
-
-                <div class="opciones" id="opciones1"></div>
-
+                <div class="pregunta" id="preguntaQuiz"></div>
+                <div class="opciones" id="opcionesQuiz"></div>
                 <div class="barra-progreso">
-                    <div class="barra-llena" id="barra1"></div>
+                    <div class="barra" id="barraQuiz"></div>
                 </div>
             </div>
-
-            <button class="boton-salir" onclick="volverAlMenu()">← Volver al Menú</button>
         </div>
 
-        <!-- JUEGO 2: CLASIFICACIÓN AVANZADA -->
-        <div class="juego" id="juego2" style="display:none;">
+        <!-- JUEGO: ORDENAR -->
+        <div class="pantalla" id="juegoOrdenar" style="display:none;">
             <div class="encabezado-juego">
-                <h2>Nivel 2: Clasificación Avanzada</h2>
+                <button class="btn-volver" onclick="volverAlMenu()">← Volver</button>
+                <h2>Ordenar Palabras</h2>
                 <div class="info-juego">
-                    <span class="puntuacion">Puntuación: <strong id="puntos2">0</strong></span>
-                    <span class="tiempo">Tiempo: <strong id="timer2">40</strong>s</span>
-                    <span class="progreso"><strong id="progreso2">1</strong>/10</span>
+                    <span>Puntuación: <strong id="puntosOrdenar">0</strong></span>
+                    <span>Tiempo: <strong id="timerOrdenar">60</strong>s</span>
+                    <span><strong id="progresoOrdenar">1</strong>/8</span>
                 </div>
             </div>
-
             <div class="contenido-juego">
-                <div class="pregunta">
-                    <p id="pregunta2"></p>
+                <div class="pregunta" id="preguntaOrdenar"></div>
+                <div class="instruccion">Arrastra las palabras en el orden correcto</div>
+                <div class="contenedor-ordenar">
+                    <div class="zona-palabras" id="zonaPalabras"></div>
+                    <div class="zona-respuesta" id="zonaRespuesta"></div>
                 </div>
-
-                <div class="opciones" id="opciones2"></div>
-
                 <div class="barra-progreso">
-                    <div class="barra-llena" id="barra2"></div>
+                    <div class="barra" id="barraOrdenar"></div>
                 </div>
             </div>
-
-            <button class="boton-salir" onclick="volverAlMenu()">← Volver al Menú</button>
         </div>
 
-        <!-- JUEGO 3: EXPERTO EN MAYÚSCULAS -->
-        <div class="juego" id="juego3" style="display:none;">
+        <!-- JUEGO: EMPAREJAR -->
+        <div class="pantalla" id="juegoEmparejar" style="display:none;">
             <div class="encabezado-juego">
-                <h2>Nivel 3: Experto en Mayúsculas</h2>
+                <button class="btn-volver" onclick="volverAlMenu()">← Volver</button>
+                <h2>Emparejar</h2>
                 <div class="info-juego">
-                    <span class="puntuacion">Puntuación: <strong id="puntos3">0</strong></span>
-                    <span class="tiempo">Tiempo: <strong id="timer3">50</strong>s</span>
-                    <span class="progreso"><strong id="progreso3">1</strong>/10</span>
+                    <span>Puntuación: <strong id="puntosEmparejar">0</strong></span>
+                    <span>Tiempo: <strong id="timerEmparejar">70</strong>s</span>
+                    <span><strong id="progresoEmparejar">1</strong>/7</span>
                 </div>
             </div>
-
             <div class="contenido-juego">
-                <div class="pregunta">
-                    <p id="pregunta3"></p>
-                </div>
-
-                <div class="opciones" id="opciones3"></div>
-
+                <div class="instruccion">Arrastra cada elemento de la izquierda a su pareja en la derecha</div>
+                <div class="contenedor-emparejar" id="contenedorEmparejar"></div>
                 <div class="barra-progreso">
-                    <div class="barra-llena" id="barra3"></div>
+                    <div class="barra" id="barraEmparejar"></div>
                 </div>
             </div>
+        </div>
 
-            <button class="boton-salir" onclick="volverAlMenu()">← Volver al Menú</button>
+        <!-- JUEGO: VERDADERO/FALSO -->
+        <div class="pantalla" id="juegoVF" style="display:none;">
+            <div class="encabezado-juego">
+                <button class="btn-volver" onclick="volverAlMenu()">← Volver</button>
+                <h2>Verdadero/Falso</h2>
+                <div class="info-juego">
+                    <span>Puntuación: <strong id="puntosVF">0</strong></span>
+                    <span>Tiempo: <strong id="timerVF">30</strong>s</span>
+                    <span><strong id="progresoVF">1</strong>/10</span>
+                </div>
+            </div>
+            <div class="contenido-juego">
+                <div class="pregunta" id="preguntaVF"></div>
+                <div class="botones-vf">
+                    <button class="btn-vf verdadero" onclick="responderVF(true)">✓ VERDADERO</button>
+                    <button class="btn-vf falso" onclick="responderVF(false)">✗ FALSO</button>
+                </div>
+                <div class="barra-progreso">
+                    <div class="barra" id="barraVF"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JUEGO: ARCADE -->
+        <div class="pantalla" id="juegoArcade" style="display:none;">
+            <div class="encabezado-juego arcade-header">
+                <button class="btn-volver" onclick="volverAlMenu()">← Volver</button>
+                <h2>⚡ CARRERA CONTRARRELOJ ⚡</h2>
+                <div class="info-juego">
+                    <span class="puntos-arcade">🔥 <strong id="puntosArcade">0</strong> 🔥</span>
+                    <span class="tiempo-arcade">⏱️ <strong id="timerArcade">20</strong>s</span>
+                </div>
+            </div>
+            <div class="contenido-juego arcade-content">
+                <div class="pregunta-arcade" id="preguntaArcade"></div>
+                <div class="opciones-arcade" id="opcionesArcade"></div>
+            </div>
         </div>
 
         <!-- PANTALLA DE RESULTADOS -->
-        <div class="pantalla-resultados" id="pantallResultados" style="display:none;">
-            <div class="tarjeta-resultados">
-                <h2>¡Juego Terminado!</h2>
-                <div class="resultado-final">
-                    <p class="puntuacion-final">Puntuación Final: <span id="puntuacionFinal">0</span></p>
-                    <p class="tiempo-restante">Tiempo utilizado: <span id="tiempoUtilizado">0</span>s</p>
-                    <p class="respuestas-correctas">Respuestas correctas: <span id="respuestasCorrectas">0</span>/10</p>
+        <div class="pantalla" id="pantallResultados" style="display:none;">
+            <div class="modal-resultados">
+                <h2>🎉 ¡JUEGO TERMINADO! 🎉</h2>
+                <div class="resultado-detalle">
+                    <p class="puntuacion-grande" id="puntuacionFinal">0</p>
+                    <p id="mensajeFinal"></p>
+                    <div class="detalles">
+                        <span>Respuestas correctas: <strong id="respuestasCorrectas">0</strong></span>
+                        <span>Tiempo: <strong id="tiempoFinal">0</strong>s</span>
+                    </div>
                 </div>
-
                 <div class="botones-resultado">
-                    <button class="boton-reintentar" onclick="reiniciarJuegoActual()">Reintentar este Nivel</button>
-                    <button class="boton-menu" onclick="volverAlMenu()">Volver al Menú</button>
+                    <button class="btn btn-reintentar" onclick="reiniciarJuegoActual()">🔄 Reintentar</button>
+                    <button class="btn btn-menu" onclick="volverAlMenu()">🏠 Menú Principal</button>
                 </div>
             </div>
         </div>
